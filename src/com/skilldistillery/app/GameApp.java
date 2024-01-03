@@ -15,6 +15,15 @@ public class GameApp {
 	private String userChoice;
 	private Scanner kb = new Scanner(System.in);
 	private List<Monster> monsterList= new ArrayList<>();
+	
+	String RESET = "\u001B[0m";
+    String RED = "\u001B[31m";
+    String GREEN = "\u001B[32m";
+    String YELLOW = "\u001B[33m";
+    String BLUE= "\u001B[34m";
+    String PURPLE="\u001B[35m";
+	String CYAN = "\u001B[36m";
+
 
 	
 	public static void main(String[] args) {
@@ -51,7 +60,7 @@ public class GameApp {
 		System.out.println("Welcome to Lordo");
 		System.out.print("Please enter your hero name: ");
 		String playerName = kb.nextLine();
-		System.out.println("Welcome " + playerName + " to the Lordo land.");
+		System.out.println("Welcome " + YELLOW + playerName + RESET+ " to the Lordo land.");
 		System.out.println("You find yourself trapped in a room with three doors.");
 		player = new Player(playerInitialHP, playerAttack, playerDodgeChance, playerName);
 	}
@@ -99,7 +108,7 @@ public class GameApp {
 			displayMenu();
 			return;
 		}
-		System.out.printf("You encounter a %s(%d) behind door %s. \n", monster.getName(), monster.getHitPoints(), doorName);
+		System.out.printf("\nYou encounter a %s" + GREEN+"(%d)"+RESET+ " behind door %s. \n", monster.getName(), monster.getHitPoints(), doorName);
 		System.out.println();
 		System.out.println("Select one of these options:");
 		displayOptions(monster);
@@ -205,8 +214,9 @@ public class GameApp {
 		displayMenu();
 	}
 
-	// BREAK UNTIL 2:35 PM MST
 	
+	
+	// BREAK UNTIL 4:35PM
 	
 	// End of the GameApp class
 	
